@@ -2,8 +2,8 @@ name: Deploy Production
 
 on:
   push:
-    branches: 
-     - production
+    branches:
+      - production
 
 jobs:
   build_and_deploy_to_production:
@@ -15,8 +15,8 @@ jobs:
           channel: beta
       - name: Enable flutter web
         run: flutter config --enable-web
-      - name: Build deps
-        run: flutter pub get
+      - name: Get dependencies
+        run: flutter packages get
       ##  We don't need this as of now but we will probably later
       # - name: Build generated code
       #   run: flutter pub run build_runner build
